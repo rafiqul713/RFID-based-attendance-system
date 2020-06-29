@@ -23,6 +23,7 @@ class RFID{
     void registerCard(String id);
     String readRFID();
     void verifyCheckIn();
+    void modeSelectorDisplay();
 
     
 };
@@ -42,5 +43,14 @@ void RFID::registerCard(String id){
   enroled_student[registered_id]=id;
   registered_id++;
   Serial.println("Register a new student");
+  
+}
+
+
+//function for mode selection
+void RFID::modeSelectorDisplay(){
+  Serial.println("Press 1: to register a new student");
+  Serial.println("Press 2: to remove an existing student");
+  Serial.println("Press 3: to access into the class");
   
 }
