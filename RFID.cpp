@@ -27,4 +27,20 @@ class RFID{
     
 };
 
-
+//function is used for registration
+void RFID::registerCard(String id){
+  if(registered_id!=0) //if there are some existing registered student
+  {
+    for(int i=0;i < registered_id;i++){
+        if(enroled_student[i]==id){
+            Serial.println("Already registered");
+            return;
+         }  
+      
+      }
+  }
+  enroled_student[registered_id]=id;
+  registered_id++;
+  Serial.println("Register a new student");
+  
+}
